@@ -4,25 +4,23 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-const SVG_WIDTH = 960;
-const SVG_HEIGHT = 420;
-const CELL_SIZE = 9;
-const CELL_GAP = 3;
-const GRID_X = 46;
-const GRID_Y = 169;
-const LOOP_SECONDS = 18;
-
-const ORBIT_PATH = [
-  "M 56 247",
-  "L 56 160",
-  "C 430 140, 724 148, 682 193",
-  "C 654 221, 352 203, 56 203",
-  "C 358 201, 650 204, 696 235",
-  "C 748 270, 438 261, 56 247",
-].join(" ");
-
-const INTENSITY = ["#111a31", "#17254d", "#233a78", "#3656aa", "#6d5dfc"];
-const ACCENTS = ["#54c7ff", "#7c5cff", "#b85cff"];
+const WIDTH = 960;
+const HEIGHT = 430;
+const GRID_X = 50;
+const GRID_Y = 130;
+const BRICK = 12;
+const GAP = 3;
+const ORB_RADIUS = 7;
+const PADDLE_WIDTH = 94;
+const PADDLE_Y = 361;
+const PLAY_LEFT = 34;
+const PLAY_RIGHT = 926;
+const PLAY_TOP = 116;
+const SPEED = 5.2;
+const SAMPLE_EVERY = 5;
+const MAX_FRAMES = 60000;
+const LOOP_SECONDS = 38;
+const PALETTE = ["#17213b", "#173e66", "#245ca0", "#4f63db", "#9b5cf6"];
 
 function parseArgs(argv) {
   const values = {
@@ -30,7 +28,6 @@ function parseArgs(argv) {
     output: "assets/proof-of-contribution.svg",
     input: null,
   };
-
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--login") values.login = argv[++index];
@@ -39,11 +36,8 @@ function parseArgs(argv) {
     else if (argument === "--help") {
       console.log("Usage: node scripts/generate-contribution-orbit.mjs [--login USER] [--output FILE] [--input JSON]");
       process.exit(0);
-    } else {
-      throw new Error(`Unknown argument: ${argument}`);
-    }
+    } else throw new Error(`Unknown argument: ${argument}`);
   }
-
   return values;
 }
 
@@ -57,335 +51,275 @@ function escapeXml(value) {
 }
 
 async function fetchCalendar(login, token) {
-  if (!token) {
-    throw new Error("GITHUB_TOKEN is required when --input is not provided");
-  }
-
-  const query = `
-    query ContributionOrbit($login: String!) {
-      user(login: $login) {
-        contributionsCollection {
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                contributionCount
-                date
-                weekday
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
+  if (!token) throw new Error("GITHUB_TOKEN is required when --input is not provided");
+  const query = `query ContributionBreakout($login: String!) {
+    user(login: $login) { contributionsCollection { contributionCalendar {
+      totalContributions weeks { contributionDays { contributionCount date weekday } }
+    } } }
+  }`;
   const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
-      "User-Agent": "bbb-build-contribution-orbit",
+      "User-Agent": "bbb-build-contribution-breakout",
       "X-GitHub-Api-Version": "2022-11-28",
     },
     body: JSON.stringify({ query, variables: { login } }),
   });
-
-  if (!response.ok) {
-    throw new Error(`GitHub GraphQL request failed: ${response.status} ${response.statusText}`);
-  }
-
+  if (!response.ok) throw new Error(`GitHub GraphQL request failed: ${response.status} ${response.statusText}`);
   const body = await response.json();
-  if (body.errors?.length) {
-    throw new Error(`GitHub GraphQL error: ${body.errors.map((error) => error.message).join("; ")}`);
-  }
-
+  if (body.errors?.length) throw new Error(`GitHub GraphQL error: ${body.errors.map((error) => error.message).join("; ")}`);
   const calendar = body.data?.user?.contributionsCollection?.contributionCalendar;
   if (!calendar) throw new Error(`GitHub user not found: ${login}`);
   return calendar;
 }
 
 function normalizeCalendar(calendar) {
-  const weeks = calendar.weeks.map((week) => ({
-    contributionDays: week.contributionDays.map((day) => ({
-      contributionCount: Number(day.contributionCount) || 0,
-      date: day.date,
-      weekday: Number(day.weekday),
-    })),
-  }));
-
   return {
     totalContributions: Number(calendar.totalContributions) || 0,
-    weeks,
+    weeks: calendar.weeks.map((week) => ({
+      contributionDays: week.contributionDays.map((day) => ({
+        contributionCount: Number(day.contributionCount) || 0,
+        date: day.date,
+        weekday: Number(day.weekday),
+      })),
+    })),
   };
 }
 
-function streaks(days) {
-  let longest = 0;
-  let running = 0;
-  for (const day of days) {
-    if (day.contributionCount > 0) {
-      running += 1;
-      longest = Math.max(longest, running);
-    } else {
-      running = 0;
-    }
+function hashSeed(text) {
+  let hash = 2166136261;
+  for (const char of text) {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
   }
-  return longest;
+  return hash >>> 0;
 }
 
-function monthLabels(weeks) {
-  const labels = [];
-  let previousMonth = -1;
-  for (let column = 0; column < weeks.length; column += 1) {
-    const firstDay = weeks[column].contributionDays[0];
-    if (!firstDay) continue;
-    const date = new Date(`${firstDay.date}T00:00:00Z`);
-    const month = date.getUTCMonth();
-    if (month !== previousMonth && column > 1) {
-      labels.push({
-        column,
-        text: date.toLocaleString("en-US", { month: "short", timeZone: "UTC" }).toUpperCase(),
-      });
-    }
-    previousMonth = month;
-  }
-  return labels;
+function seededRandom(seed) {
+  let state = seed || 1;
+  return () => {
+    state += 0x6d2b79f5;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
-function quantileThresholds(days) {
-  const positive = days
-    .map((day) => day.contributionCount)
-    .filter((count) => count > 0)
-    .sort((a, b) => a - b);
-
-  if (!positive.length) return [1, 2, 3, 4];
-  return [0.2, 0.45, 0.7, 0.9].map((quantile) => positive[Math.floor((positive.length - 1) * quantile)]);
+function thresholds(days) {
+  const values = days.map((day) => day.contributionCount).filter(Boolean).sort((a, b) => a - b);
+  if (!values.length) return [1, 2, 3, 4];
+  return [0.2, 0.45, 0.7, 0.9].map((q) => values[Math.floor((values.length - 1) * q)]);
 }
 
-function intensityIndex(count, thresholds) {
-  if (count <= 0) return 0;
-  if (count <= thresholds[0]) return 1;
-  if (count <= thresholds[1]) return 2;
-  if (count <= thresholds[2]) return 3;
+function levelFor(count, cuts) {
+  if (!count) return 0;
+  if (count <= cuts[0]) return 1;
+  if (count <= cuts[1]) return 2;
+  if (count <= cuts[2]) return 3;
   return 4;
 }
 
-function formatNumber(number) {
-  return new Intl.NumberFormat("en-US").format(number);
-}
-
-function buildCells(weeks, thresholds) {
-  const cells = [];
-  const candidates = [];
-
-  weeks.forEach((week, column) => {
+function buildBricks(calendar) {
+  const days = calendar.weeks.flatMap((week) => week.contributionDays);
+  const cuts = thresholds(days);
+  const bricks = [];
+  calendar.weeks.forEach((week, column) => {
     week.contributionDays.forEach((day) => {
-      const row = day.weekday;
-      const x = GRID_X + column * (CELL_SIZE + CELL_GAP);
-      const y = GRID_Y + row * (CELL_SIZE + CELL_GAP);
-      const level = intensityIndex(day.contributionCount, thresholds);
-      const scanDelay = 1.1 + (column / Math.max(weeks.length - 1, 1)) * 12.8 + row * 0.035;
-      const accent = ACCENTS[(column + row) % ACCENTS.length];
-
-      cells.push(`
-        <rect class="day level-${level}" x="${x}" y="${y}" width="${CELL_SIZE}" height="${CELL_SIZE}" rx="2" fill="${INTENSITY[level]}" opacity="0.82" aria-label="${escapeXml(day.date)}: ${day.contributionCount} contributions">
-          <animate attributeName="fill" values="${INTENSITY[level]};${accent};${INTENSITY[level]};${INTENSITY[level]}" keyTimes="0;0.035;0.08;1" begin="${scanDelay.toFixed(2)}s" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="${scanDelay.toFixed(2)}s" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-        </rect>`);
-
-      if (day.contributionCount > 0) {
-        candidates.push({ ...day, x: x + CELL_SIZE / 2, y: y + CELL_SIZE / 2, scanDelay });
-      }
+      bricks.push({
+        x: GRID_X + column * (BRICK + GAP),
+        y: GRID_Y + day.weekday * (BRICK + GAP),
+        count: day.contributionCount,
+        date: day.date,
+        level: levelFor(day.contributionCount, cuts),
+        alive: day.contributionCount > 0,
+        hitFrame: null,
+      });
     });
   });
+  return bricks;
+}
 
-  const checks = candidates
-    .sort((a, b) => b.contributionCount - a.contributionCount)
-    .slice(0, 7)
-    .sort((a, b) => a.x - b.x)
-    .map((day, index) => {
-      const delay = (day.scanDelay + 0.4 + index * 0.08) % LOOP_SECONDS;
-      return `
-        <g class="verification" transform="translate(${day.x.toFixed(1)} ${day.y.toFixed(1)})">
-          <circle r="9" fill="#0c1835" stroke="${ACCENTS[index % ACCENTS.length]}" stroke-width="1.3"/>
-          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="${delay.toFixed(2)}s" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="${delay.toFixed(2)}s" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-        </g>`;
-    });
+function circleHitsBrick(x, y, brick) {
+  const closestX = Math.max(brick.x, Math.min(x, brick.x + BRICK));
+  const closestY = Math.max(brick.y, Math.min(y, brick.y + BRICK));
+  const dx = x - closestX;
+  const dy = y - closestY;
+  return dx * dx + dy * dy <= ORB_RADIUS * ORB_RADIUS;
+}
 
-  return { cells: cells.join(""), checks: checks.join("") };
+function aimAtBrick(x, y, target, random) {
+  const targetX = target.x + BRICK / 2 + (random() - 0.5) * 7;
+  const targetY = target.y + BRICK / 2;
+  const dx = targetX - x;
+  const dy = targetY - y;
+  const length = Math.hypot(dx, dy) || 1;
+  return { vx: (dx / length) * SPEED, vy: (dy / length) * SPEED };
+}
+
+export function simulateBreakout(bricks, seedText = "bbb-build") {
+  const random = seededRandom(hashSeed(seedText));
+  const active = bricks.filter((brick) => brick.alive);
+  if (!active.length) return { frames: [{ x: WIDTH / 2, y: PADDLE_Y - 30, paddleX: WIDTH / 2 - PADDLE_WIDTH / 2 }], hits: [], completed: true };
+
+  let x = WIDTH / 2;
+  let y = PADDLE_Y - 24;
+  let target = active[Math.floor(random() * active.length)];
+  let { vx, vy } = aimAtBrick(x, y, target, random);
+  let paddleX = x - PADDLE_WIDTH / 2;
+  let lastHitFrame = 0;
+  let frame = 0;
+  const frames = [];
+  const hits = [];
+
+  while (active.some((brick) => brick.alive) && frame < MAX_FRAMES) {
+    x += vx;
+    y += vy;
+
+    if (x <= PLAY_LEFT + ORB_RADIUS || x >= PLAY_RIGHT - ORB_RADIUS) {
+      x = Math.max(PLAY_LEFT + ORB_RADIUS, Math.min(PLAY_RIGHT - ORB_RADIUS, x));
+      vx = -vx;
+    }
+    if (y <= PLAY_TOP + ORB_RADIUS) {
+      y = PLAY_TOP + ORB_RADIUS;
+      vy = Math.abs(vy);
+    }
+
+    const desiredPaddleX = Math.max(PLAY_LEFT, Math.min(PLAY_RIGHT - PADDLE_WIDTH, x - PADDLE_WIDTH / 2));
+    paddleX += (desiredPaddleX - paddleX) * 0.19;
+    if (vy > 0 && y + ORB_RADIUS >= PADDLE_Y && y - ORB_RADIUS < PADDLE_Y + 10) {
+      y = PADDLE_Y - ORB_RADIUS;
+      const remaining = active.filter((brick) => brick.alive);
+      target = remaining[Math.floor(random() * remaining.length)];
+      ({ vx, vy } = aimAtBrick(x, y, target, random));
+      vy = -Math.abs(vy);
+    }
+
+    const hit = active.find((brick) => brick.alive && circleHitsBrick(x, y, brick));
+    if (hit) {
+      hit.alive = false;
+      hit.hitFrame = frame;
+      hits.push({ brick: hit, frame, x: hit.x + BRICK / 2, y: hit.y + BRICK / 2 });
+      lastHitFrame = frame;
+      vy = vy > 0 ? Math.abs(vy) : -Math.abs(vy);
+      if (y > hit.y + BRICK / 2) vy = Math.abs(vy);
+      else vy = -Math.abs(vy);
+      const angleJitter = (random() - 0.5) * 0.34;
+      const angle = Math.atan2(vy, vx) + angleJitter;
+      vx = Math.cos(angle) * SPEED;
+      vy = Math.sin(angle) * SPEED;
+    }
+
+    // If a shallow angle misses the field for too long, the next paddle return
+    // re-aims at a live contribution. This keeps every generated loop finite.
+    if (frame - lastHitFrame > 1500 && vy < 0) {
+      const remaining = active.filter((brick) => brick.alive);
+      target = remaining[Math.floor(random() * remaining.length)];
+      ({ vx, vy } = aimAtBrick(x, y, target, random));
+      vy = -Math.abs(vy);
+      lastHitFrame = frame - 900;
+    }
+
+    if (frame % SAMPLE_EVERY === 0) frames.push({ x, y, paddleX });
+    frame += 1;
+  }
+
+  return { frames, hits, completed: !active.some((brick) => brick.alive), totalFrames: frame };
+}
+
+function compactValues(values) {
+  return values.map((value) => Number(value).toFixed(1)).join(";");
+}
+
+function formatNumber(value) {
+  return new Intl.NumberFormat("en-US").format(value);
 }
 
 export function renderContributionSvg(rawCalendar, login = "bbb-build") {
   const calendar = normalizeCalendar(rawCalendar);
-  const days = calendar.weeks.flatMap((week) => week.contributionDays);
-  const activeDays = days.filter((day) => day.contributionCount > 0).length;
-  const longestStreak = streaks(days);
-  const peak = days.reduce(
-    (best, day) => (day.contributionCount > best.contributionCount ? day : best),
-    { contributionCount: 0, date: "—" },
-  );
-  const thresholds = quantileThresholds(days);
-  const { cells, checks } = buildCells(calendar.weeks, thresholds);
-  const labels = monthLabels(calendar.weeks)
-    .map(({ column, text }) => `<text class="month" x="${GRID_X + column * (CELL_SIZE + CELL_GAP)}" y="151">${text}</text>`)
-    .join("");
-  const lastDay = days.at(-1)?.date || "—";
+  const bricks = buildBricks(calendar);
+  const simulation = simulateBreakout(bricks, `${login}:${bricks.at(-1)?.date || "empty"}:${calendar.totalContributions}`);
+  if (!simulation.completed) throw new Error("Breakout simulation did not clear every active contribution brick");
+
+  const activeBricks = bricks.filter((brick) => brick.count > 0);
+  const sampledDuration = LOOP_SECONDS;
+  const pauseFraction = 0.055;
+  const movementEnd = 1 - pauseFraction;
+  const ballX = compactValues(simulation.frames.map((state) => state.x));
+  const ballY = compactValues(simulation.frames.map((state) => state.y));
+  const paddleX = compactValues(simulation.frames.map((state) => state.paddleX));
+  const firstFrame = simulation.frames[0];
+
+  const brickSvg = bricks.map((brick) => {
+    const fill = PALETTE[brick.level];
+    const base = `<rect x="${brick.x}" y="${brick.y}" width="${BRICK}" height="${BRICK}" rx="3" fill="${fill}"`;
+    if (!brick.count) return `${base} opacity="0.32"/>`;
+    const hit = simulation.hits.find((entry) => entry.brick === brick);
+    const time = Math.min(movementEnd, (hit.frame / Math.max(simulation.totalFrames, 1)) * movementEnd).toFixed(5);
+    return `${base} aria-label="${escapeXml(brick.date)}: ${brick.count} contributions">
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;${time};${time};${movementEnd};1" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
+    </rect>`;
+  }).join("");
+
+  const impactSvg = simulation.hits.map((hit, index) => {
+    const time = Math.min(movementEnd, (hit.frame / Math.max(simulation.totalFrames, 1)) * movementEnd);
+    const end = Math.min(movementEnd, time + 0.012);
+    return `<g transform="translate(${hit.x} ${hit.y})" opacity="0">
+      <circle r="4" fill="none" stroke="${index % 2 ? "#a96bff" : "#66d8ff"}" stroke-width="1.5"/>
+      <path d="M-3 0l2 2 4-5" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;${time.toFixed(5)};${Math.min(end, time + 0.002).toFixed(5)};${end.toFixed(5)};1" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="scale" values=".4;.4;1.35;1.8;1.8" keyTimes="0;${time.toFixed(5)};${Math.min(end, time + 0.002).toFixed(5)};${end.toFixed(5)};1" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
+    </g>`;
+  }).join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${SVG_WIDTH}" height="${SVG_HEIGHT}" viewBox="0 0 ${SVG_WIDTH} ${SVG_HEIGHT}" role="img" aria-labelledby="title description">
-  <title id="title">Proof of Contribution for ${escapeXml(login)}</title>
-  <desc id="description">An animated blue and violet Orb traces the letter B across ${formatNumber(calendar.totalContributions)} GitHub contributions from the last twelve months, scanning contribution cells and revealing verification checks.</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" role="img" aria-labelledby="title description">
+  <title id="title">Contribution Breakout for ${escapeXml(login)}</title>
+  <desc id="description">A glowing blue and violet Orb plays Breakout against ${activeBricks.length} active days from ${formatNumber(calendar.totalContributions)} GitHub contributions, with a moving paddle and verification flashes on impact.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070b18"/>
-      <stop offset="0.52" stop-color="#0a1024"/>
-      <stop offset="1" stop-color="#100b25"/>
-    </linearGradient>
-    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#54c7ff" stop-opacity="0.68"/>
-      <stop offset="0.52" stop-color="#6d5dfc" stop-opacity="0.24"/>
-      <stop offset="1" stop-color="#b85cff" stop-opacity="0.64"/>
-    </linearGradient>
-    <linearGradient id="orbit" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#54c7ff"/>
-      <stop offset="0.52" stop-color="#7c5cff"/>
-      <stop offset="1" stop-color="#d15cff"/>
-    </linearGradient>
-    <radialGradient id="orb" cx="34%" cy="28%" r="72%">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.18" stop-color="#c9f1ff"/>
-      <stop offset="0.5" stop-color="#62c7ff"/>
-      <stop offset="0.78" stop-color="#795cff"/>
-      <stop offset="1" stop-color="#d15cff"/>
-    </radialGradient>
-    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="orbGlow" x="-200%" y="-200%" width="500%" height="500%">
-      <feGaussianBlur stdDeviation="9" result="blur"/>
-      <feFlood flood-color="#6d7cff" flood-opacity="0.92"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="microGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#92a4d8" stroke-opacity="0.045" stroke-width="1"/>
-    </pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#060914"/><stop offset=".58" stop-color="#0a1023"/><stop offset="1" stop-color="#130a25"/></linearGradient>
+    <linearGradient id="edge"><stop stop-color="#5bd6ff"/><stop offset=".55" stop-color="#6964ff"/><stop offset="1" stop-color="#bc5cff"/></linearGradient>
+    <radialGradient id="orb" cx="30%" cy="25%"><stop stop-color="#fff"/><stop offset=".23" stop-color="#bceeff"/><stop offset=".58" stop-color="#5c8cff"/><stop offset="1" stop-color="#b95cff"/></radialGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#8ea4d7" stroke-opacity=".04"/></pattern>
     <style>
-      text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-      .eyebrow { fill: #7dd7ff; font-size: 11px; font-weight: 700; letter-spacing: 2.4px; }
-      .heading { fill: #f4f7ff; font-size: 27px; font-weight: 760; letter-spacing: -0.6px; }
-      .subheading { fill: #8f9cc2; font-size: 11px; letter-spacing: 0.35px; }
-      .month { fill: #687699; font-size: 9px; letter-spacing: 0.6px; }
-      .panel-label { fill: #64739a; font-size: 9px; letter-spacing: 1.15px; }
-      .panel-value { fill: #eef4ff; font-size: 18px; font-weight: 740; }
-      .panel-detail { fill: #8391b4; font-size: 8.5px; }
-      .footer { fill: #64739a; font-size: 9px; letter-spacing: 0.8px; }
-      .day { shape-rendering: geometricPrecision; }
-      .verification { opacity: 0; filter: url(#softGlow); }
-      @media (prefers-reduced-motion: reduce) {
-        animate, animateMotion, animateTransform { display: none; }
-        .verification { opacity: 1; }
-      }
+      text{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.label{fill:#72dfff;font-size:10px;font-weight:700;letter-spacing:2px}.title{fill:#f5f7ff;font-size:24px;font-weight:800;letter-spacing:-.5px}.meta{fill:#7f8cae;font-size:10px;letter-spacing:.5px}.score{fill:#dce6ff;font-size:12px;font-weight:700}.brick{shape-rendering:geometricPrecision}
+      @media(prefers-reduced-motion:reduce){animate,animateTransform{display:none}}
     </style>
   </defs>
-
-  <rect x="1" y="1" width="958" height="418" rx="22" fill="url(#background)" stroke="url(#border)" stroke-width="1.5"/>
-  <rect x="14" y="14" width="932" height="392" rx="16" fill="url(#microGrid)" stroke="#6374aa" stroke-opacity="0.14"/>
-
-  <g transform="translate(44 39)">
-    <circle cx="5" cy="5" r="4" fill="#54c7ff" filter="url(#softGlow)">
-      <animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/>
+  <rect x="1" y="1" width="958" height="428" rx="20" fill="url(#bg)" stroke="url(#edge)" stroke-opacity=".7"/>
+  <rect x="14" y="14" width="932" height="402" rx="14" fill="url(#grid)" stroke="#7082b7" stroke-opacity=".12"/>
+  <text class="label" x="42" y="43">BBB ARCADE / LIVE CONTRIBUTIONS</text>
+  <text class="title" x="42" y="77">CONTRIBUTION BREAKOUT</text>
+  <text class="meta" x="42" y="98">Every active day is a brick. Every hit verifies a public signal.</text>
+  <text class="score" x="918" y="55" text-anchor="end">${formatNumber(calendar.totalContributions)} PTS</text>
+  <text class="meta" x="918" y="77" text-anchor="end">${activeBricks.length} ACTIVE DAYS</text>
+  <g class="brick">${brickSvg}</g>
+  ${impactSvg}
+  <g filter="url(#glow)">
+    <rect x="${firstFrame.paddleX.toFixed(1)}" y="${PADDLE_Y}" width="${PADDLE_WIDTH}" height="9" rx="4.5" fill="url(#edge)">
+      <animate attributeName="x" values="${paddleX}" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="${firstFrame.x.toFixed(1)}" cy="${firstFrame.y.toFixed(1)}" r="${ORB_RADIUS}" fill="url(#orb)" stroke="#eafdff" stroke-width=".8">
+      <animate attributeName="cx" values="${ballX}" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="${ballY}" dur="${sampledDuration.toFixed(2)}s" repeatCount="indefinite"/>
     </circle>
-    <text class="eyebrow" x="20" y="9">HUMAN × CODE / LIVE SIGNAL</text>
-    <text class="heading" x="0" y="48">PROOF OF CONTRIBUTION</text>
-    <text class="subheading" x="1" y="71">A public trail of building, reviewing, and shipping.</text>
   </g>
-
-  <g transform="translate(738 39)">
-    <rect width="176" height="79" rx="13" fill="#101831" fill-opacity="0.74" stroke="#526da9" stroke-opacity="0.32"/>
-    <text class="panel-label" x="17" y="23">12 MONTH SIGNAL</text>
-    <text class="panel-value" x="17" y="49">${formatNumber(calendar.totalContributions)}</text>
-    <text class="panel-detail" x="17" y="66">CONTRIBUTIONS · THROUGH ${escapeXml(lastDay)}</text>
-    <circle cx="151" cy="39" r="10" fill="none" stroke="#54c7ff" stroke-opacity="0.28"/>
-    <circle cx="151" cy="39" r="4.5" fill="url(#orb)" filter="url(#softGlow)"/>
-  </g>
-
-  <g aria-label="Contribution calendar">
-    ${labels}
-    ${cells}
-  </g>
-
-  <path d="${ORBIT_PATH}" fill="none" stroke="#7d8ac0" stroke-opacity="0.16" stroke-width="1.2" stroke-dasharray="2 7"/>
-  <path d="${ORBIT_PATH}" pathLength="1" fill="none" stroke="url(#orbit)" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" filter="url(#softGlow)">
-    <animate attributeName="stroke-dashoffset" values="1;0;0;1" keyTimes="0;0.76;0.92;1" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0.08;0.48;0.2;0.08" keyTimes="0;0.76;0.92;1" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-  </path>
-  <path d="${ORBIT_PATH}" pathLength="1" fill="none" stroke="url(#orbit)" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.025 0.975" filter="url(#softGlow)">
-    <animate attributeName="stroke-dashoffset" from="0" to="-1" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
-  </path>
-
-  ${checks}
-
-  <g filter="url(#orbGlow)">
-    <circle r="16" fill="#5f74ff" opacity="0.14"/>
-    <circle r="10" fill="url(#orb)" stroke="#e6f8ff" stroke-opacity="0.76" stroke-width="1"/>
-    <ellipse cx="-2.5" cy="-3.5" rx="3.4" ry="2.4" fill="#ffffff" opacity="0.8"/>
-    <path d="M -21 0 L -10 -5 L -10 5 Z" fill="#65d2ff" opacity="0.18"/>
-    <animateMotion path="${ORBIT_PATH}" dur="${LOOP_SECONDS}s" repeatCount="indefinite" rotate="auto"/>
-  </g>
-
-  <g transform="translate(45 290)">
-    <line x1="0" y1="0" x2="870" y2="0" stroke="#6073a9" stroke-opacity="0.19"/>
-
-    <g transform="translate(0 24)">
-      <text class="panel-label" x="0" y="0">ACTIVE DAYS</text>
-      <text class="panel-value" x="0" y="25">${formatNumber(activeDays)}</text>
-      <text class="panel-detail" x="0" y="42">DAYS WITH A PUBLIC SIGNAL</text>
-    </g>
-
-    <g transform="translate(238 24)">
-      <text class="panel-label" x="0" y="0">LONGEST STREAK</text>
-      <text class="panel-value" x="0" y="25">${formatNumber(longestStreak)} DAYS</text>
-      <text class="panel-detail" x="0" y="42">CONSISTENT BUILDING WINDOW</text>
-    </g>
-
-    <g transform="translate(500 24)">
-      <text class="panel-label" x="0" y="0">PEAK DAY</text>
-      <text class="panel-value" x="0" y="25">${formatNumber(peak.contributionCount)}</text>
-      <text class="panel-detail" x="0" y="42">CONTRIBUTIONS · ${escapeXml(peak.date)}</text>
-    </g>
-
-    <g transform="translate(752 20)">
-      <rect width="118" height="47" rx="11" fill="#111b38" stroke="#6a64d8" stroke-opacity="0.48"/>
-      <circle cx="18" cy="23.5" r="7" fill="none" stroke="#65d2ff"/>
-      <path d="M 14 23 L 17 26 L 22 20" fill="none" stroke="#f1f8ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <text class="eyebrow" x="34" y="27">B VERIFIED</text>
-    </g>
-  </g>
-
-  <g transform="translate(45 390)">
-    <text class="footer">ORB TRACE / B · BUILD · VERIFY · SHIP</text>
-    <text class="footer" x="870" text-anchor="end">@${escapeXml(login)}</text>
-  </g>
+  <line x1="34" y1="383" x2="926" y2="383" stroke="url(#edge)" stroke-opacity=".18"/>
+  <text class="meta" x="42" y="405">BREAK · VERIFY · REBUILD · REPEAT</text>
+  <text class="meta" x="918" y="405" text-anchor="end">@${escapeXml(login)}</text>
 </svg>
 `.replace(/[ \t]+$/gm, "");
 }
 
 async function main() {
   const options = parseArgs(process.argv.slice(2));
-  let calendar;
-  if (options.input) {
-    calendar = JSON.parse(await readFile(resolve(options.input), "utf8"));
-  } else {
-    calendar = await fetchCalendar(options.login, process.env.GITHUB_TOKEN);
-  }
-
+  const calendar = options.input
+    ? JSON.parse(await readFile(resolve(options.input), "utf8"))
+    : await fetchCalendar(options.login, process.env.GITHUB_TOKEN);
   const outputPath = resolve(options.output);
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, renderContributionSvg(calendar, options.login), "utf8");
@@ -393,8 +327,5 @@ async function main() {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  main().catch((error) => {
-    console.error(error.message);
-    process.exitCode = 1;
-  });
+  main().catch((error) => { console.error(error.message); process.exitCode = 1; });
 }

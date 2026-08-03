@@ -6,11 +6,10 @@ import { renderContributionSvg } from "./generate-contribution-orbit.mjs";
 function fixtureCalendar() {
   const weeks = [];
   let totalContributions = 0;
-
   for (let week = 0; week < 53; week += 1) {
     const contributionDays = [];
     for (let weekday = 0; weekday < 7; weekday += 1) {
-      const contributionCount = (week * 3 + weekday * 5) % 17;
+      const contributionCount = (week + weekday * 3) % 5 === 0 ? 0 : (week * 3 + weekday * 5) % 17;
       totalContributions += contributionCount;
       contributionDays.push({
         contributionCount,
@@ -20,25 +19,29 @@ function fixtureCalendar() {
     }
     weeks.push({ contributionDays });
   }
-
   return { totalContributions, weeks };
 }
 
-test("renders an accessible animated SVG from a contribution calendar", () => {
-  const svg = renderContributionSvg(fixtureCalendar(), "bbb-build");
-
+test("renders a complete contribution breakout loop", () => {
+  const calendar = fixtureCalendar();
+  const activeDays = calendar.weeks.flatMap((week) => week.contributionDays).filter((day) => day.contributionCount > 0).length;
+  const svg = renderContributionSvg(calendar, "bbb-build");
   assert.match(svg, /^<\?xml version="1\.0"/);
-  assert.match(svg, /<title id="title">Proof of Contribution for bbb-build<\/title>/);
-  assert.match(svg, /PROOF OF CONTRIBUTION/);
-  assert.match(svg, /B VERIFIED/);
-  assert.match(svg, /<animateMotion[^>]+repeatCount="indefinite"/);
-  assert.equal((svg.match(/class="day level-/g) || []).length, 53 * 7);
-  assert.equal((svg.match(/class="verification"/g) || []).length, 7);
-  assert.doesNotMatch(svg, /World ID Orb 認証ロケーション/);
+  assert.match(svg, /<title id="title">Contribution Breakout for bbb-build<\/title>/);
+  assert.match(svg, /CONTRIBUTION BREAKOUT/);
+  assert.match(svg, /BREAK · VERIFY · REBUILD · REPEAT/);
+  assert.match(svg, /attributeName="x" values=/);
+  assert.match(svg, /attributeName="cx" values=/);
+  assert.match(svg, /attributeName="cy" values=/);
+  assert.equal((svg.match(/aria-label="\d{4}-\d{2}-\d{2}: \d+ contributions"/g) || []).length, activeDays);
+  assert.doesNotMatch(svg, /B VERIFIED|B-shaped orbit|150\+ locations/i);
 });
 
-test("escapes a login before placing it in SVG text", () => {
-  const svg = renderContributionSvg(fixtureCalendar(), 'build<&"');
-  assert.match(svg, /build&lt;&amp;&quot;/);
-  assert.doesNotMatch(svg, /build<&"/);
+test("is deterministic and escapes the login", () => {
+  const calendar = fixtureCalendar();
+  const first = renderContributionSvg(calendar, 'build<&"');
+  const second = renderContributionSvg(calendar, 'build<&"');
+  assert.equal(first, second);
+  assert.match(first, /build&lt;&amp;&quot;/);
+  assert.doesNotMatch(first, /build<&"/);
 });
