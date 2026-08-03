@@ -1,34 +1,52 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=6B9FE8&center=true&vCenter=true&random=false&width=600&lines=Hi+there%2C+I'm+Hiroki+Tajima+%F0%9F%91%8B;CEO+%40+BBB%26Company;World+ID+Orb+Ecosystem+Developer)](https://github.com/HirokiTajima)
+# HIROKI TAJIMA
+
+### Building proof-of-human systems, open tools, and visual experiments.
+
+[![BBB & Company](https://img.shields.io/badge/BBB%20%26%20Company-0A1024?style=for-the-badge&logo=github&logoColor=7DD7FF)](https://github.com/BBB-and-Company)
+[![World ID](https://img.shields.io/badge/World%20ID-Ecosystem%20Builder-6D5DFC?style=for-the-badge)](https://world.org/world-id)
 
 </div>
 
----
+## Proof of Contribution
 
-### About Me
+<div align="center">
+  <img src="./assets/proof-of-contribution.svg" width="100%" alt="An animated blue and violet Orb traces the letter B across bbb-build's GitHub contribution calendar, scanning cells and revealing verification checks." />
+</div>
 
-World ID Orb エコシステム事業開発に取り組んでいます。
+The contribution calendar above is an original SVG generated from live GitHub data. A luminous Orb scans the graph along a **B-shaped orbit**—turning public building activity into a proof trail. It refreshes automatically every day.
 
-- 🔐 World ID Orb 認証ロケーションを日本国内 **150箇所以上** に展開
-- 🚀 [Humanary](https://github.com/HirokiTajima) - World ID 認証クリエイターリスト
-- 📱 MiniApp / Web3 プロダクト開発
+## Currently Building
 
----
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌌 Galaxy Collision</h3>
+      <p>A real-time 60,000-particle galaxy collision in one HTML file. WebGL2, restricted N-body dynamics, and a physics regression harness—tuned to feel like Hubble imagery.</p>
+      <p><a href="https://github.com/bbb-build/galaxy-collision-screensaver"><strong>Explore the simulation →</strong></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>◎ MAScope MCP</h3>
+      <p>An MCP server for World MiniApp reviews and analytics, powered by feedback from verified humans.</p>
+      <p><a href="https://github.com/bbb-build/mascope-mcp"><strong>Explore the MCP server →</strong></a></p>
+    </td>
+  </tr>
+</table>
 
-### Tech Stack
+```text
+VERIFIED HUMANS  ───▶  WORLD MINIAPP SIGNALS  ───▶  AI / MCP ANALYTICS
+       identity               feedback                    insight
+```
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
+## Build System
 
----
+`TypeScript` · `Next.js` · `React` · `Supabase` · `Solidity` · `WebGL2` · `MCP`
 
-### Connect
+<div align="center">
 
-[![GitHub Organization](https://img.shields.io/badge/BBB%26Company-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BBB-and-Company)
+**Human × Orb × Code**
+
+<sub>Build in public. Verify the signal. Ship what matters.</sub>
 
 </div>
