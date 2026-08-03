@@ -81,7 +81,7 @@
 
   <g aria-label="Contribution calendar">
     <text class="month" x="106" y="151">SEP</text><text class="month" x="154" y="151">OCT</text><text class="month" x="202" y="151">NOV</text><text class="month" x="262" y="151">DEC</text><text class="month" x="310" y="151">JAN</text><text class="month" x="358" y="151">FEB</text><text class="month" x="406" y="151">MAR</text><text class="month" x="466" y="151">APR</text><text class="month" x="514" y="151">MAY</text><text class="month" x="574" y="151">JUN</text><text class="month" x="622" y="151">JUL</text><text class="month" x="670" y="151">AUG</text>
-    
+
         <rect class="day level-0" x="46" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-03: 0 contributions">
           <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.10s" dur="18s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.10s" dur="18s" repeatCount="indefinite"/>
@@ -1557,7 +1557,7 @@
     <animate attributeName="stroke-dashoffset" from="0" to="-1" dur="18s" repeatCount="indefinite"/>
   </path>
 
-  
+
         <g class="verification" transform="translate(350.5 233.5)">
           <circle r="9" fill="#0c1835" stroke="#54c7ff" stroke-width="1.3"/>
           <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>

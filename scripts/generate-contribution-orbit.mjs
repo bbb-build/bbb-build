@@ -374,7 +374,7 @@ export function renderContributionSvg(rawCalendar, login = "bbb-build") {
     <text class="footer" x="870" text-anchor="end">@${escapeXml(login)}</text>
   </g>
 </svg>
-`;
+`.replace(/[ \t]+$/gm, "");
 }
 
 async function main() {
