@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title description">
+  <title id="title">Proof of Contribution for bbb-build</title>
+  <desc id="description">An animated blue and violet Orb traces the letter B across 11,278 GitHub contributions from the last twelve months, scanning contribution cells and revealing verification checks.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.52" stop-color="#0a1024"/>
+      <stop offset="1" stop-color="#100b25"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#54c7ff" stop-opacity="0.68"/>
+      <stop offset="0.52" stop-color="#6d5dfc" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#b85cff" stop-opacity="0.64"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#54c7ff"/>
+      <stop offset="0.52" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#d15cff"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="34%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#c9f1ff"/>
+      <stop offset="0.5" stop-color="#62c7ff"/>
+      <stop offset="0.78" stop-color="#795cff"/>
+      <stop offset="1" stop-color="#d15cff"/>
+    </radialGradient>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="orbGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feFlood flood-color="#6d7cff" flood-opacity="0.92"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="microGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#92a4d8" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <style>
+      text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .eyebrow { fill: #7dd7ff; font-size: 11px; font-weight: 700; letter-spacing: 2.4px; }
+      .heading { fill: #f4f7ff; font-size: 27px; font-weight: 760; letter-spacing: -0.6px; }
+      .subheading { fill: #8f9cc2; font-size: 11px; letter-spacing: 0.35px; }
+      .month { fill: #687699; font-size: 9px; letter-spacing: 0.6px; }
+      .panel-label { fill: #64739a; font-size: 9px; letter-spacing: 1.15px; }
+      .panel-value { fill: #eef4ff; font-size: 18px; font-weight: 740; }
+      .panel-detail { fill: #8391b4; font-size: 8.5px; }
+      .footer { fill: #64739a; font-size: 9px; letter-spacing: 0.8px; }
+      .day { shape-rendering: geometricPrecision; }
+      .verification { opacity: 0; filter: url(#softGlow); }
+      @media (prefers-reduced-motion: reduce) {
+        animate, animateMotion, animateTransform { display: none; }
+        .verification { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="958" height="418" rx="22" fill="url(#background)" stroke="url(#border)" stroke-width="1.5"/>
+  <rect x="14" y="14" width="932" height="392" rx="16" fill="url(#microGrid)" stroke="#6374aa" stroke-opacity="0.14"/>
+
+  <g transform="translate(44 39)">
+    <circle cx="5" cy="5" r="4" fill="#54c7ff" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text class="eyebrow" x="20" y="9">HUMAN × CODE / LIVE SIGNAL</text>
+    <text class="heading" x="0" y="48">PROOF OF CONTRIBUTION</text>
+    <text class="subheading" x="1" y="71">A public trail of building, reviewing, and shipping.</text>
+  </g>
+
+  <g transform="translate(738 39)">
+    <rect width="176" height="79" rx="13" fill="#101831" fill-opacity="0.74" stroke="#526da9" stroke-opacity="0.32"/>
+    <text class="panel-label" x="17" y="23">12 MONTH SIGNAL</text>
+    <text class="panel-value" x="17" y="49">11,278</text>
+    <text class="panel-detail" x="17" y="66">CONTRIBUTIONS · THROUGH 2026-08-03</text>
+    <circle cx="151" cy="39" r="10" fill="none" stroke="#54c7ff" stroke-opacity="0.28"/>
+    <circle cx="151" cy="39" r="4.5" fill="url(#orb)" filter="url(#softGlow)"/>
+  </g>
+
+  <g aria-label="Contribution calendar">
+    <text class="month" x="106" y="151">SEP</text><text class="month" x="154" y="151">OCT</text><text class="month" x="202" y="151">NOV</text><text class="month" x="262" y="151">DEC</text><text class="month" x="310" y="151">JAN</text><text class="month" x="358" y="151">FEB</text><text class="month" x="406" y="151">MAR</text><text class="month" x="466" y="151">APR</text><text class="month" x="514" y="151">MAY</text><text class="month" x="574" y="151">JUN</text><text class="month" x="622" y="151">JUL</text><text class="month" x="670" y="151">AUG</text>
+    
+        <rect class="day level-0" x="46" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.10s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.10s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-04: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.14s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.14s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-05: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.17s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.17s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-06: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.21s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.21s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.24s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.24s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.28s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.28s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="46" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-09: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.31s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.31s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-10: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.35s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.35s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.38s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.38s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-12: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.42s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.42s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-13: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.45s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.45s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.49s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.49s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.52s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.52s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="58" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.56s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.56s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-17: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.59s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.59s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-18: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.63s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.63s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.66s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.66s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.70s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.70s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-21: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.73s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.73s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-22: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.77s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.77s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="70" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-23: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.80s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.80s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-24: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.84s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.84s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-25: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.87s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.87s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-26: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.91s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.91s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-27: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.94s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.94s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-28: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="1.98s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="1.98s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-29: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.01s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.01s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="82" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-08-30: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.05s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.05s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="94" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2025-08-31: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="2.08s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.08s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-01: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.12s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.12s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-02: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.15s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.15s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.19s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.19s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-04: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.22s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.22s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-05: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.26s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.26s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="94" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-06: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.29s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.29s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.33s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.33s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.37s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.37s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-09: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.40s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.40s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-10: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.44s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.44s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.47s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.47s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-12: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.51s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.51s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="106" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-13: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.54s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.54s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.58s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.58s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.61s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.61s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.65s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.65s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-17: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.68s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.68s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-18: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.72s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.72s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.75s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.75s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="118" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.79s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.79s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-21: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.82s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.82s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-22: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.86s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.86s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-23: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.89s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.89s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-24: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.93s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.93s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-25: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="2.96s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="2.96s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-26: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.00s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.00s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="130" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-27: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.03s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.03s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-28: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.07s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.07s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-29: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.10s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.10s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-09-30: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.14s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.14s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-01: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.17s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.17s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-02: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.21s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.21s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="142" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.24s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.24s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="142" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2025-10-04: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="3.28s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.28s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="154" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2025-10-05: 23 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="3.32s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.32s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="154" y="181" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2025-10-06: 4 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="3.35s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.35s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="154" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.39s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.39s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="154" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.42s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.42s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="154" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-09: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.46s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.46s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="154" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-10: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.49s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.49s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="154" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.53s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.53s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-12: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.56s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.56s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-13: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.60s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.60s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.63s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.63s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.67s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.67s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.70s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.70s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-17: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.74s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.74s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="166" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-18: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.77s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.77s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.81s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.81s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.84s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.84s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-21: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.88s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.88s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-22: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.91s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.91s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-23: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.95s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.95s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-24: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="3.98s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="3.98s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="178" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-25: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.02s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.02s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-26: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.05s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.05s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-27: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.09s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.09s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-28: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.12s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.12s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-29: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.16s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.16s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-30: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.19s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.19s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-10-31: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.23s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.23s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="190" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-01: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.26s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.26s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-02: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.30s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.30s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.34s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.34s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-04: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.37s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.37s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-05: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.41s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.41s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-06: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.44s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.44s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.48s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.48s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="202" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.51s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.51s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-09: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.55s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.55s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-10: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.58s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.58s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.62s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.62s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-12: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.65s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.65s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-13: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.69s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.69s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.72s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.72s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="214" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.76s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.76s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.79s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.79s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-17: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.83s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.83s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-18: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.86s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.86s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.90s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.90s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.93s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.93s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-21: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="4.97s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="4.97s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="226" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-22: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.00s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.00s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-23: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.04s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.04s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-24: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.07s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.07s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-25: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.11s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.11s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-26: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.14s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.14s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-27: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.18s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.18s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-28: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.21s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.21s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="238" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-29: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.25s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.25s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-11-30: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.28s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.28s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-01: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.32s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.32s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-02: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.35s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.35s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.39s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.39s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-04: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.42s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.42s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-05: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.46s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.46s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="250" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-06: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.49s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.49s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.53s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.53s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.57s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.57s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-09: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.60s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.60s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-10: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.64s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.64s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.67s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.67s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-12: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.71s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.71s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="262" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-13: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.74s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.74s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.78s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.78s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.81s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.81s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.85s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.85s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-17: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.88s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.88s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-18: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.92s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.92s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.95s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.95s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="274" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="5.99s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="5.99s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-21: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.02s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.02s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-22: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.06s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.06s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-23: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.09s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.09s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-24: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.13s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.13s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-25: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.16s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.16s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-26: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.20s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.20s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="286" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-27: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.23s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.23s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="298" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-28: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.27s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.27s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="298" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2025-12-29: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.30s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.30s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="298" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2025-12-30: 15 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.34s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.34s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="298" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2025-12-31: 26 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.37s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.37s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="298" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-01: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.41s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.41s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="298" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-02: 3 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.44s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.44s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="298" y="241" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-01-03: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.48s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.48s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="310" y="169" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-04: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.52s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.52s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="310" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-05: 14 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.55s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.55s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="310" y="193" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-01-06: 35 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="6.59s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.59s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="310" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-07: 16 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.62s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.62s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="310" y="217" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-01-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.66s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.66s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="310" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-09: 8 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.69s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.69s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="310" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-10: 29 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="6.73s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.73s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="169" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-11: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.76s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.76s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="181" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-12: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.80s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.80s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-13: 7 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.83s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.83s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="322" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-01-14: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="6.87s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.87s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-15: 2 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.90s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.90s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-16: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.94s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.94s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="322" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-17: 1 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="6.97s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="6.97s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="334" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-18: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="7.01s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.01s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="334" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-01-19: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="7.04s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.04s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="334" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-20: 3 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="7.08s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.08s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="334" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-01-21: 26 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="7.11s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.11s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="334" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-01-22: 12 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="7.15s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.15s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="334" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-01-23: 52 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.18s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.18s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="334" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-01-24: 54 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.22s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.22s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-25: 70 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.25s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.25s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="346" y="181" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-01-26: 53 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.29s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.29s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-27: 128 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.32s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.32s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-28: 171 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.36s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.36s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="217" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-29: 94 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.39s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.39s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-30: 239 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.43s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.43s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="346" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-01-31: 78 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.46s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.46s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="358" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-01: 120 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.50s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.50s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="358" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-02: 115 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.54s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.54s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="358" y="193" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-03: 36 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.57s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.57s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="358" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-04: 27 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="7.61s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.61s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="358" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-05: 45 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.64s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.64s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="358" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-06: 54 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.67s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.67s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="358" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-07: 100 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="7.71s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.71s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="370" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-08: 60 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="7.75s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.75s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="370" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-09: 22 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="7.78s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.78s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="370" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-02-10: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="7.82s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.82s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="370" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-02-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="7.85s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.85s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="370" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-12: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="7.89s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.89s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="370" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-02-13: 1 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="7.92s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.92s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="370" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-02-14: 7 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="7.96s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.96s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="382" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-02-15: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="7.99s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="7.99s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="382" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-02-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="8.03s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.03s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="382" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-17: 82 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.06s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.06s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="382" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-18: 52 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="8.10s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.10s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="382" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-19: 23 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.13s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.13s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="382" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-02-20: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.17s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.17s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="382" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-21: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.20s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.20s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="394" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-22: 75 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.24s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.24s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="394" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-23: 79 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.27s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.27s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="394" y="193" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-02-24: 47 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="8.31s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.31s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="394" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-25: 110 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.34s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.34s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="394" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-02-26: 30 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.38s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.38s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="394" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-02-27: 11 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.41s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.41s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="394" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-02-28: 92 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.45s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.45s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="406" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-01: 59 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="8.48s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.48s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="406" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-03-02: 63 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="8.52s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.52s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="406" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-03: 28 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.55s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.55s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="406" y="205" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-04: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.59s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.59s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="406" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-05: 2 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.62s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.62s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="406" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-06: 4 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.66s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.66s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="406" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-07: 1 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.69s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.69s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="418" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-08: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.73s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.73s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="418" y="181" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-09: 45 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="8.77s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.77s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="418" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-10: 7 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.80s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.80s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="418" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-03-11: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="8.84s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.84s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="418" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-12: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.87s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.87s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="418" y="229" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-13: 21 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.91s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.91s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="418" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-14: 15 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="8.94s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.94s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="430" y="169" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-15: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="8.98s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="8.98s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="430" y="181" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-03-16: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#54c7ff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="9.01s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.01s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="430" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-17: 7 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.05s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.05s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="430" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-18: 26 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.08s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.08s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="430" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-19: 26 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.12s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.12s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="430" y="229" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-03-20: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="9.15s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.15s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="430" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-21: 30 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.19s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.19s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="442" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-22: 47 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.22s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.22s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="442" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-23: 21 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.26s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.26s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="442" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-03-24: 76 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="9.29s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.29s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="442" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-25: 44 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.33s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.33s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="442" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-26: 41 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.36s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.36s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="442" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-03-27: 7 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.40s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.40s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="442" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-03-28: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.43s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.43s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="454" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-29: 43 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.47s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.47s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="454" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-03-30: 63 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="9.50s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.50s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="454" y="193" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-03-31: 42 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.54s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.54s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="454" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-01: 21 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.57s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.57s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="454" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-02: 17 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="9.61s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.61s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="454" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-03: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.64s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.64s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="454" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-04: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.68s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.68s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="466" y="169" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-04-05: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="9.72s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.72s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="466" y="181" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-06: 8 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.75s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.75s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="466" y="193" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-04-07: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#7c5cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="9.79s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.79s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-0" x="466" y="205" width="9" height="9" rx="2" fill="#111a31" opacity="0.82" aria-label="2026-04-08: 0 contributions">
+          <animate attributeName="fill" values="#111a31;#b85cff;#111a31;#111a31" keyTimes="0;0.035;0.08;1" begin="9.82s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.82s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="466" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-09: 4 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.86s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.86s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="466" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-10: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.89s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.89s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="466" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-04-11: 35 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="9.93s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.93s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="478" y="169" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-12: 11 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="9.96s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="9.96s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="478" y="181" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-13: 10 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.00s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.00s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="478" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-14: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.03s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.03s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="478" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-04-15: 36 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.07s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.07s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="478" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-16: 26 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.10s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.10s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="478" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-17: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.14s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.14s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="478" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-04-18: 63 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="10.17s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.17s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="490" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-04-19: 44 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.21s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.21s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="490" y="181" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-20: 8 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.24s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.24s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="490" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-21: 12 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.28s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.28s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="490" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-22: 27 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.31s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.31s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="490" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-23: 8 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.35s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.35s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="490" y="229" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-24: 23 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.38s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.38s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="490" y="241" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-25: 6 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.42s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.42s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="502" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-26: 25 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.45s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.45s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="502" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-27: 25 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.49s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.49s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="502" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-04-28: 23 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.52s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.52s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="502" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-04-29: 40 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.56s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.56s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="502" y="217" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-04-30: 12 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.59s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.59s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="502" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-01: 57 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.63s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.63s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="502" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-02: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.66s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.66s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="514" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-03: 32 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.70s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.70s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="514" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-04: 14 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="10.74s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.74s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="514" y="193" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-05-05: 12 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="10.77s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.77s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="514" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-06: 47 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.81s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.81s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="514" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-07: 31 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.84s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.84s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="514" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-08: 47 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.88s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.88s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="514" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-09: 42 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.91s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.91s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="526" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-10: 59 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="10.95s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.95s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="526" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-11: 62 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="10.98s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="10.98s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="526" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-12: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.02s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.02s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="526" y="205" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-13: 14 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.05s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.05s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="526" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-14: 40 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.09s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.09s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="526" y="229" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-15: 20 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.12s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.12s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="526" y="241" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-16: 23 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.16s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.16s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="538" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-17: 35 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.19s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.19s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="538" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-18: 14 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.23s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.23s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="538" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-19: 95 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.26s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.26s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="538" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-20: 95 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.30s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.30s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="538" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-21: 52 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.33s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.33s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="538" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-22: 94 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.37s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.37s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="538" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-23: 69 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.40s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.40s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="550" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-24: 252 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.44s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.44s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="550" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-25: 459 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.47s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.47s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="550" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-26: 157 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.51s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.51s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="550" y="205" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-05-27: 10 contributions">
+          <animate attributeName="fill" values="#17254d;#54c7ff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="11.54s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.54s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="550" y="217" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-28: 95 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.58s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.58s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="550" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-05-29: 126 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.61s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.61s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="550" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-05-30: 56 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.65s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.65s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="562" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-05-31: 29 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.68s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.68s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="562" y="181" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-01: 37 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.72s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.72s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="562" y="193" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-02: 38 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.75s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.75s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="562" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-03: 96 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.79s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.79s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="562" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-06-04: 27 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.82s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.82s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="562" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-05: 82 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.86s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.86s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="562" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-06: 87 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="11.89s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.89s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="574" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-07: 47 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="11.93s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.93s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="574" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-06-08: 13 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="11.97s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="11.97s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="574" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-06-09: 19 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="12.00s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.00s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="574" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-10: 56 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.04s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.04s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="574" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-11: 40 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.07s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.07s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="574" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-12: 55 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.11s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.11s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="574" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-13: 96 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.14s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.14s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="586" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-14: 44 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.18s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.18s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="586" y="181" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-15: 59 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.21s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.21s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="586" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-16: 78 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.25s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.25s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="586" y="205" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-17: 35 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.28s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.28s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="586" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-06-18: 18 contributions">
+          <animate attributeName="fill" values="#233a78;#7c5cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="12.32s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.32s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="586" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-19: 52 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.35s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.35s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="586" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-20: 66 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.39s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.39s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="598" y="169" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-21: 49 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.42s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.42s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="598" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-06-22: 22 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="12.46s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.46s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="598" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-23: 139 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.49s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.49s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="598" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-24: 133 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.53s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.53s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="598" y="217" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-25: 84 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.56s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.56s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="598" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-06-26: 45 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.60s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.60s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="598" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-27: 104 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.63s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.63s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-28: 167 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.67s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.67s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-29: 128 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.70s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.70s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-06-30: 85 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.74s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.74s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-01: 83 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.77s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.77s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="217" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-02: 94 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.81s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.81s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="610" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-03: 349 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.84s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.84s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="610" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-07-04: 41 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="12.88s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.88s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="622" y="169" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-07-05: 28 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="12.92s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.92s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-06: 77 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.95s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.95s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-07: 125 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="12.99s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="12.99s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-08: 258 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.02s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.02s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="217" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-09: 195 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.06s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.06s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-10: 206 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.09s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.09s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="622" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-11: 142 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.13s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.13s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="634" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-12: 219 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.16s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.16s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="634" y="181" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-07-13: 25 contributions">
+          <animate attributeName="fill" values="#233a78;#b85cff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="13.20s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.20s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="634" y="193" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-07-14: 22 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="13.23s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.23s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="634" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-15: 67 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.27s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.27s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="634" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-07-16: 44 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="13.30s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.30s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="634" y="229" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-07-17: 33 contributions">
+          <animate attributeName="fill" values="#3656aa;#54c7ff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="13.34s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.34s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="634" y="241" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-07-18: 44 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="13.37s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.37s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="646" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-19: 119 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.41s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.41s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="646" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-20: 221 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.44s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.44s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="646" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-21: 68 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.48s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.48s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="646" y="205" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-07-22: 5 contributions">
+          <animate attributeName="fill" values="#17254d;#b85cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="13.51s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.51s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-2" x="646" y="217" width="9" height="9" rx="2" fill="#233a78" opacity="0.82" aria-label="2026-07-23: 14 contributions">
+          <animate attributeName="fill" values="#233a78;#54c7ff;#233a78;#233a78" keyTimes="0;0.035;0.08;1" begin="13.55s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.55s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-1" x="646" y="229" width="9" height="9" rx="2" fill="#17254d" opacity="0.82" aria-label="2026-07-24: 12 contributions">
+          <animate attributeName="fill" values="#17254d;#7c5cff;#17254d;#17254d" keyTimes="0;0.035;0.08;1" begin="13.58s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.58s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="646" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-25: 76 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.62s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.62s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-26: 127 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.65s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.65s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="181" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-27: 107 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.69s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.69s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="193" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-28: 90 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.72s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.72s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="205" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-29: 72 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.76s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.76s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="658" y="217" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-07-30: 61 contributions">
+          <animate attributeName="fill" values="#3656aa;#7c5cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="13.79s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.79s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="229" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-07-31: 64 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#b85cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.83s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.83s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="658" y="241" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-08-01: 120 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#54c7ff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.86s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.86s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-4" x="670" y="169" width="9" height="9" rx="2" fill="#6d5dfc" opacity="0.82" aria-label="2026-08-02: 101 contributions">
+          <animate attributeName="fill" values="#6d5dfc;#7c5cff;#6d5dfc;#6d5dfc" keyTimes="0;0.035;0.08;1" begin="13.90s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.90s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect class="day level-3" x="670" y="181" width="9" height="9" rx="2" fill="#3656aa" opacity="0.82" aria-label="2026-08-03: 36 contributions">
+          <animate attributeName="fill" values="#3656aa;#b85cff;#3656aa;#3656aa" keyTimes="0;0.035;0.08;1" begin="13.94s" dur="18s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.82;1;0.82;0.82" keyTimes="0;0.035;0.08;1" begin="13.94s" dur="18s" repeatCount="indefinite"/>
+        </rect>
+  </g>
+
+  <path d="M 56 247 L 56 160 C 430 140, 724 148, 682 193 C 654 221, 352 203, 56 203 C 358 201, 650 204, 696 235 C 748 270, 438 261, 56 247" fill="none" stroke="#7d8ac0" stroke-opacity="0.16" stroke-width="1.2" stroke-dasharray="2 7"/>
+  <path d="M 56 247 L 56 160 C 430 140, 724 148, 682 193 C 654 221, 352 203, 56 203 C 358 201, 650 204, 696 235 C 748 270, 438 261, 56 247" pathLength="1" fill="none" stroke="url(#orbit)" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" filter="url(#softGlow)">
+    <animate attributeName="stroke-dashoffset" values="1;0;0;1" keyTimes="0;0.76;0.92;1" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.08;0.48;0.2;0.08" keyTimes="0;0.76;0.92;1" dur="18s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 56 247 L 56 160 C 430 140, 724 148, 682 193 C 654 221, 352 203, 56 203 C 358 201, 650 204, 696 235 C 748 270, 438 261, 56 247" pathLength="1" fill="none" stroke="url(#orbit)" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.025 0.975" filter="url(#softGlow)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1" dur="18s" repeatCount="indefinite"/>
+  </path>
+
+  
+        <g class="verification" transform="translate(350.5 233.5)">
+          <circle r="9" fill="#0c1835" stroke="#54c7ff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="7.83s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="7.83s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(554.5 185.5)">
+          <circle r="9" fill="#0c1835" stroke="#7c5cff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="11.95s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="11.95s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(554.5 173.5)">
+          <circle r="9" fill="#0c1835" stroke="#b85cff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="12.00s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="12.00s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(614.5 233.5)">
+          <circle r="9" fill="#0c1835" stroke="#54c7ff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="13.48s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="13.48s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(626.5 209.5)">
+          <circle r="9" fill="#0c1835" stroke="#7c5cff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="13.74s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="13.74s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(638.5 173.5)">
+          <circle r="9" fill="#0c1835" stroke="#b85cff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="13.96s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="13.96s" dur="18s" repeatCount="indefinite"/>
+        </g>
+        <g class="verification" transform="translate(650.5 185.5)">
+          <circle r="9" fill="#0c1835" stroke="#54c7ff" stroke-width="1.3"/>
+          <path d="M -4 0 L -1 3 L 5 -4" fill="none" stroke="#eef7ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.15;0.72;1" begin="14.32s" dur="18s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" additive="sum" type="scale" values="0.25;0.25;1.15;1;1" keyTimes="0;0.08;0.14;0.2;1" begin="14.32s" dur="18s" repeatCount="indefinite"/>
+        </g>
+
+  <g filter="url(#orbGlow)">
+    <circle r="16" fill="#5f74ff" opacity="0.14"/>
+    <circle r="10" fill="url(#orb)" stroke="#e6f8ff" stroke-opacity="0.76" stroke-width="1"/>
+    <ellipse cx="-2.5" cy="-3.5" rx="3.4" ry="2.4" fill="#ffffff" opacity="0.8"/>
+    <path d="M -21 0 L -10 -5 L -10 5 Z" fill="#65d2ff" opacity="0.18"/>
+    <animateMotion path="M 56 247 L 56 160 C 430 140, 724 148, 682 193 C 654 221, 352 203, 56 203 C 358 201, 650 204, 696 235 C 748 270, 438 261, 56 247" dur="18s" repeatCount="indefinite" rotate="auto"/>
+  </g>
+
+  <g transform="translate(45 290)">
+    <line x1="0" y1="0" x2="870" y2="0" stroke="#6073a9" stroke-opacity="0.19"/>
+
+    <g transform="translate(0 24)">
+      <text class="panel-label" x="0" y="0">ACTIVE DAYS</text>
+      <text class="panel-value" x="0" y="25">208</text>
+      <text class="panel-detail" x="0" y="42">DAYS WITH A PUBLIC SIGNAL</text>
+    </g>
+
+    <g transform="translate(238 24)">
+      <text class="panel-label" x="0" y="0">LONGEST STREAK</text>
+      <text class="panel-value" x="0" y="25">117 DAYS</text>
+      <text class="panel-detail" x="0" y="42">CONSISTENT BUILDING WINDOW</text>
+    </g>
+
+    <g transform="translate(500 24)">
+      <text class="panel-label" x="0" y="0">PEAK DAY</text>
+      <text class="panel-value" x="0" y="25">459</text>
+      <text class="panel-detail" x="0" y="42">CONTRIBUTIONS · 2026-05-25</text>
+    </g>
+
+    <g transform="translate(752 20)">
+      <rect width="118" height="47" rx="11" fill="#111b38" stroke="#6a64d8" stroke-opacity="0.48"/>
+      <circle cx="18" cy="23.5" r="7" fill="none" stroke="#65d2ff"/>
+      <path d="M 14 23 L 17 26 L 22 20" fill="none" stroke="#f1f8ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text class="eyebrow" x="34" y="27">B VERIFIED</text>
+    </g>
+  </g>
+
+  <g transform="translate(45 390)">
+    <text class="footer">ORB TRACE / B · BUILD · VERIFY · SHIP</text>
+    <text class="footer" x="870" text-anchor="end">@bbb-build</text>
+  </g>
+</svg>

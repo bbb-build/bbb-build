@@ -1,0 +1,47 @@
+name: Proof of Contribution
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 0 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: proof-of-contribution
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate the contribution orbit
+        run: node scripts/generate-contribution-orbit.mjs --login "$GITHUB_REPOSITORY_OWNER"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify the generator
+        run: node --test scripts/generate-contribution-orbit.test.mjs
+
+      - name: Commit the refreshed SVG
+        run: |
+          git add assets/proof-of-contribution.svg
+          if git diff --cached --quiet; then
+            echo "Contribution orbit is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh contribution orbit"
+          git push
