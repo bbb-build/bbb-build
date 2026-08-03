@@ -9,13 +9,13 @@
 
 </div>
 
-## Proof of Contribution
+## Contribution Breakout
 
 <div align="center">
-  <img src="./assets/proof-of-contribution.svg" width="100%" alt="An animated blue and violet Orb traces the letter B across bbb-build's GitHub contribution calendar, scanning cells and revealing verification checks." />
+  <img src="./assets/proof-of-contribution.svg" width="100%" alt="A glowing blue and violet Orb plays Breakout against bbb-build's GitHub contribution calendar, destroying active-day bricks with a moving paddle and verification flashes." />
 </div>
 
-The contribution calendar above is an original SVG generated from live GitHub data. A luminous Orb scans the graph along a **B-shaped orbit**—turning public building activity into a proof trail. It refreshes automatically every day.
+Every active contribution day becomes a brick. A luminous Orb clears the board, the paddle keeps the rally alive, and each impact flashes a verification mark. The deterministic animation is regenerated from live GitHub data every day.
 
 ## Currently Building
 
